@@ -773,3 +773,35 @@ body {
 .polaroid:hover img {
     transform: scale(1.1); /* Zoom nhẹ ảnh bên trong */
 }
+
+/* --- TRANG TRÍ VIDEO --- */
+.video-box {
+    /* 1. Tự động co giãn theo kích thước video */
+    width: fit-content;  /* Chiều rộng hộp = chiều rộng video */
+    height: auto;        /* Chiều cao hộp = chiều cao video (Xóa bỏ khoảng đen thừa) */
+    
+    /* 2. Giới hạn kích thước để không bị tràn màn hình */
+    max-width: 90%;      /* Tối đa chỉ chiếm 90% màn hình */
+    
+    /* 3. Căn giữa */
+    margin: 20px auto;   /* Tự động căn giữa trang */
+    
+    /* 4. Trang trí */
+    background: #000;
+    border: 3px solid #ffd700; /* Viền vàng */
+    border-radius: 15px;
+    padding: 6px;        /* Chừa một lớp viền đen mỏng bao quanh video */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    
+    /* 5. Fix lỗi khoảng trắng nhỏ dưới chân video */
+    display: block; 
+    line-height: 0; 
+}
+
+/* --- VIDEO BÊN TRONG --- */
+.styled-video {
+    width: 100%;         /* Video sẽ chiếm hết phần rộng của hộp */
+    height: auto;        /* Giữ nguyên tỷ lệ hình ảnh, không bị méo */
+    border-radius: 10px; /* Bo góc video cho khớp với hộp */
+    object-fit: contain;
+}
